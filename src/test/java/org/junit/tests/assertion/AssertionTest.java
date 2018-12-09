@@ -654,33 +654,30 @@ public class AssertionTest {
     @Test
     public void assertGreaterThan() {
         
-       boolean result = Assert.assertGreaterThan(new String("helloooooo"),new String("World"), new Comparator<String>() {
+       Assert.assertGreaterThan(new String("helloooooo"), new String("World"), 
+               new Comparator<String>() {
             public int compare(String s1, String s2) {
-              return (s1.length() - s2.length());
+              return s1.compareTo(s2);
             }
         });
-       assertEquals(true,result);
-          
-       boolean result2 = Assert.assertGreaterThan(new Integer(7),new Integer(9), new Comparator<Integer>() {
+     
+         
+     Assert.assertGreaterThan(new Integer(9),new Integer(7), 
+             new Comparator<Integer>() {
            public int compare(Integer n1, Integer n2) {
-             return (n1 - n2);
+             return n1.compareTo(n2);
            }
        });
           
-       assertEquals(false,result2);
        
-        /*
-        assertEquals(o, o);
-        assertEquals("abc", "abc");
-        assertEquals(true, true);
-        assertEquals((byte) 1, (byte) 1);
-        assertEquals('a', 'a');
-        assertEquals((short) 1, (short) 1);
-        assertEquals(1, 1); // int by default, cast is unnecessary
-        assertEquals(1l, 1l);
-        assertEquals(1.0, 1.0, 0.0);
-        assertEquals(1.0d, 1.0d, 0.0d);
-        */
+     Assert.assertGreaterThan(new Double(3.7),new Double(3.2),new Comparator<Double>() {
+           public int compare(Double n1, Double n2) {
+             return n1.compareTo(n2);
+           }
+       });
+     
+    
+    
     }
     
 }
