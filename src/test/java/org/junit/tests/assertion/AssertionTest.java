@@ -676,8 +676,12 @@ public class AssertionTest {
            }
        });
      
-    
-    
-    }
+     Assert.assertGreaterThan(new int[13],new int[9],new Comparator<int[]>() {
+
+        public int compare(int[] o1, int[] o2) {
+            return o1.length - o2.length;
+        }});
+  
+  }//END TEST
     
 }
