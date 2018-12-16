@@ -1002,4 +1002,17 @@ public class AssertionTest {
             }
         };
     }
+    
+    @Test
+    public void testGreaterThan(){
+        Assert.assertGreaterThan(new Integer(7),new Integer(3));
+        Assert.assertGreaterThan(new Boolean(true), new Boolean(false));
+        Assert.assertGreaterThan(new Double(3.1), new Double(2.9));
+        Assert.assertGreaterThan(new String("abcd"), new String("ab"));
+        Assert.assertGreaterThan((byte) 2, (byte) 1);
+        Assert.assertGreaterThan('r', 'k');
+        Assert.assertGreaterThan((short) 7, (short) 1); 
+    }
+    
+    
 }
