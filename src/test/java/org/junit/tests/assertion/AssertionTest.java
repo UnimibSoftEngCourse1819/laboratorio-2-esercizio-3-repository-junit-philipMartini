@@ -16,6 +16,7 @@ import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Comparator;
 
 import org.junit.Assert;
 import org.junit.ComparisonFailure;
@@ -846,6 +847,7 @@ public class AssertionTest {
     public void assertNotEqualsIgnoresFloatDeltaOnNaN() {
         assertNotEquals(Float.NaN, Float.NaN, 1f);
     }
+<<<<<<< HEAD
 
     @Test(expected = AssertionError.class)
     public void assertThrowsRequiresAnExceptionToBeThrown() {
@@ -1014,5 +1016,41 @@ public class AssertionTest {
         Assert.assertGreaterThan((short) 7, (short) 1); 
     }
     
+=======
+    
+    
+    @Test
+    public void assertGreaterThan() {
+        
+       Assert.assertGreaterThan(new String("helloooooo"), new String("World"), 
+               new Comparator<String>() {
+            public int compare(String s1, String s2) {
+              return s1.compareTo(s2);
+            }
+        });
+     
+         
+     Assert.assertGreaterThan(new Integer(9),new Integer(7), 
+             new Comparator<Integer>() {
+           public int compare(Integer n1, Integer n2) {
+             return n1.compareTo(n2);
+           }
+       });
+          
+       
+     Assert.assertGreaterThan(new Double(3.7),new Double(3.2),new Comparator<Double>() {
+           public int compare(Double n1, Double n2) {
+             return n1.compareTo(n2);
+           }
+       });
+     
+     Assert.assertGreaterThan(new int[13],new int[9],new Comparator<int[]>() {
+
+        public int compare(int[] o1, int[] o2) {
+            return o1.length - o2.length;
+        }});
+  
+  }//END TEST
+>>>>>>> refs/heads/greater
     
 }
