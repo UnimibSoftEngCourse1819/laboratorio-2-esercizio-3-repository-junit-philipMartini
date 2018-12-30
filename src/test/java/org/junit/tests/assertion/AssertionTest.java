@@ -847,7 +847,7 @@ public class AssertionTest {
     public void assertNotEqualsIgnoresFloatDeltaOnNaN() {
         assertNotEquals(Float.NaN, Float.NaN, 1f);
     }
-<<<<<<< HEAD
+
 
     @Test(expected = AssertionError.class)
     public void assertThrowsRequiresAnExceptionToBeThrown() {
@@ -1016,8 +1016,7 @@ public class AssertionTest {
         Assert.assertGreaterThan((short) 7, (short) 1); 
     }
     
-=======
-    
+
     
     @Test
     public void assertGreaterThan() {
@@ -1051,6 +1050,6 @@ public class AssertionTest {
         }});
   
   }//END TEST
->>>>>>> refs/heads/greater
+
     
 }

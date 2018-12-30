@@ -1036,17 +1036,12 @@ public class Assert {
     
     ////////Assert Greater Than Primitive
    public static void assertGreaterThan(Comparable o1, Comparable o2){
-        boolean res = (o1.compareTo(o2) > 0);
-        assertEquals(true,res);
+       assertTrue(o1.compareTo(o2) > 0);
     }
     
     
     
     public static <T> void assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator){
-        int comp = comparator.compare(o1, o2);
-        boolean res = false;
-        if(comp > 0)
-            res = true;
-         assertEquals(true,res);
+        assertTrue(comparator.compare(o1, o2) > 0);
     }
 }
